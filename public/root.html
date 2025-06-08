@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML Renderer</title>
+    <style>
+        #main-flex {
+            display: flex;
+            gap: 20px;
+        }
+        #form-container {
+            flex: 1;
+            font-size: 0.95em;
+        }
+        #json-input, #api-payload {
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            width: 100%;
+            height: 150px;
+        }
+        #rendered-elements {
+            flex: 1;
+            min-width: 0;
+            background-color: whitesmoke;
+            padding: 10px;
+            margin-top: 0;
+        }
+        .form-field-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+        .form-field-row label {
+            text-align: left;
+            margin-right: 6px;
+            min-width: 70px;
+            font-size: 0.95em;
+        }
+        .form-field-row input,
+        .form-field-row select {
+            font-size: 0.95em;
+            padding: 3px 6px;
+            max-width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Dynamic Renderer</h1>
+    <div id="main-flex">
+        <div id="form-container">
+            <textarea id="json-input" placeholder='Enter JSON configuration here...'></textarea>
+            <button id="submit-btn">Render</button>
+            <label id="json-error-label" style="color: red; display: none; text-align: center;"></label>
+            <h2 id="api-call-label" style="display:none;">Form Payload</h2>
+            <textarea id="api-payload" readonly style="display:none;"></textarea>
+        </div>
+        <div id="rendered-elements"></div>
+    </div>
+
+    <script src="../src/app.js"></script>
+</body>
+</html>
